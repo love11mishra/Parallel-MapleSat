@@ -2,3 +2,7 @@
 */build
 */cmake-build-debug
 
+-r .idea
+**/.idea
+**/build
+**/cmake-build-debug
