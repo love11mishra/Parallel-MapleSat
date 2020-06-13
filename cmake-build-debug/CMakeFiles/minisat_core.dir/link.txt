@@ -1,1 +1,0 @@
-/usr/bin/g++  -g  -rdynamic CMakeFiles/minisat_core.dir/core/Main.cc.o  -o minisat_core libmaplesat.a -lz -lmpichcxx -lmpich 
