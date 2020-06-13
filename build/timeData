@@ -1,0 +1,13 @@
+S.No.|	Benchmark				      |	MPI%(time)
+==================================================================
+1    |	courses0.2_2017_9.cnf 			      |	4.63
+2    |	CNP-5-1800.cnf				      |	12.27
+3    | 	assoc_mult_err_3.c.cnf			      |	9.06
+4    |	huck.col.11.cnf				      |	31.14
+5    |	CNP-5-1700.cnf				      |	10.37
+6    | 	e_rphp055_04.cnf			      |	75.43
+7    |	a_rphp055_04.cnf			      |	71.11
+8    |	ecarev-110-4099-22-30-2.cnf		      |	56.39
+9    |	Problem11_label29_false-unreach-call.c.cnf    |	8.02
+10   |	Problem11_label51_false-unreach-call.c.cnf    |	6.72
+11   |	gto_p60c231.cnf				      |	46.65

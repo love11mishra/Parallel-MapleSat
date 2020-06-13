@@ -1,0 +1,132 @@
+@ mpiP
+@ Command : ./maplesat ../../benchmarks/assoc_mult_err_3.c.cnf 
+@ Version                  : 3.4.1
+@ MPIP Build date          : Apr 17 2020, 15:05:45
+@ Start time               : 2020 06 04 12:13:19
+@ Stop time                : 2020 06 04 12:17:01
+@ Timer Used               : PMPI_Wtime
+@ MPIP env var             : [null]
+@ Collector Rank           : 0
+@ Collector PID            : 23514
+@ Final Output Dir         : .
+@ Report generation        : Single collector task
+@ MPI Task Assignment      : 0 lavleshm-HP-Notebook
+@ MPI Task Assignment      : 1 lavleshm-HP-Notebook
+@ MPI Task Assignment      : 2 lavleshm-HP-Notebook
+
+---------------------------------------------------------------------------
+@--- MPI Time (seconds) ---------------------------------------------------
+---------------------------------------------------------------------------
+Task    AppTime    MPITime     MPI%
+   0        222       20.1     9.06
+   1        223       21.8     9.78
+   2        223       20.4     9.16
+   *        667       62.3     9.33
+---------------------------------------------------------------------------
+@--- Callsites: 15 --------------------------------------------------------
+---------------------------------------------------------------------------
+ ID Lev File/Address        Line Parent_Funct                                                                                                                         MPI_Call
+  1   0 0x55fb79eaf678           _ZN7Minisat9IntOption4helpEb                                                                                                         Iprobe
+  2   0 0x55fb79eafbd3           _ZN7Minisat17printUsageAndExitEiPPcb                                                                                                 Wait
+  3   0 Solver.cc              0 _ZN9__gnu_cxx12__to_xstringINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEcEET_PFiPT0_mPKS8_P13__va_list_tagEmSB_z.constprop.0 Waitall
+  4   0 0x55fb79eafbc0           _ZN7Minisat17printUsageAndExitEiPPcb                                                                                                 Irecv
+  5   0 Solver.cc              0 _ZN9__gnu_cxx12__to_xstringINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEcEET_PFiPT0_mPKS8_P13__va_list_tagEmSB_z.constprop.0 Isend
+  6   0 0x558214c44678           [unknown]                                                                                                                            Iprobe
+  7   0 0x558214c44bd3           [unknown]                                                                                                                            Wait
+  8   0 0x558214c44bc0           [unknown]                                                                                                                            Irecv
+  9   0 0x558214c454f8           [unknown]                                                                                                                            Waitall
+ 10   0 0x558214c454d0           [unknown]                                                                                                                            Isend
+ 11   0 0x55d3b6c56678           [unknown]                                                                                                                            Iprobe
+ 12   0 0x55d3b6c56bd3           [unknown]                                                                                                                            Wait
+ 13   0 0x55d3b6c574f8           [unknown]                                                                                                                            Waitall
+ 14   0 0x55d3b6c56bc0           [unknown]                                                                                                                            Irecv
+ 15   0 0x55d3b6c574d0           [unknown]                                                                                                                            Isend
+---------------------------------------------------------------------------
+@--- Aggregate Time (top twenty, descending, milliseconds) ----------------
+---------------------------------------------------------------------------
+Call                 Site       Time    App%    MPI%     COV
+Iprobe                  6   1.98e+04    2.97   31.85    0.00
+Iprobe                 11   1.82e+04    2.73   29.27    0.00
+Iprobe                  1    1.8e+04    2.69   28.83    0.00
+Isend                  10        755    0.11    1.21    0.00
+Irecv                  14        707    0.11    1.13    0.00
+Wait                   12        665    0.10    1.07    0.00
+Irecv                   4        662    0.10    1.06    0.00
+Wait                    2        634    0.10    1.02    0.00
+Isend                   5        616    0.09    0.99    0.00
+Isend                  15        541    0.08    0.87    0.00
+Irecv                   8        416    0.06    0.67    0.00
+Wait                    7        388    0.06    0.62    0.00
+Waitall                 9        369    0.06    0.59    0.00
+Waitall                 3        267    0.04    0.43    0.00
+Waitall                13        239    0.04    0.38    0.00
+---------------------------------------------------------------------------
+@--- Aggregate Sent Message Size (top twenty, descending, bytes) ----------
+---------------------------------------------------------------------------
+Call                 Site      Count      Total       Avrg  Sent%
+Isend                  10     110706   2.98e+06       26.9  46.29
+Isend                   5      70342   1.85e+06       26.3  28.71
+Isend                  15      61614   1.61e+06       26.1  25.00
+---------------------------------------------------------------------------
+@--- Callsite Time statistics (all, milliseconds): 15 ---------------------
+---------------------------------------------------------------------------
+Name              Site Rank  Count      Max     Mean      Min   App%   MPI%
+Iprobe               1    0 2037874     2.24  0.00881  0.00575   8.08  89.18
+Iprobe               1    * 2037874     2.24  0.00881  0.00575   2.69  28.83
+
+Iprobe               6    1 2861876     1.95  0.00693  0.00475   8.92  91.15
+Iprobe               6    * 2861876     1.95  0.00693  0.00475   2.97  31.85
+
+Iprobe              11    2 2030250     2.44  0.00898    0.005   8.19  89.45
+Iprobe              11    * 2030250     2.44  0.00898    0.005   2.73  29.27
+
+Irecv                4    0  85472     1.24  0.00774  0.00575   0.30   3.29
+Irecv                4    *  85472     1.24  0.00774  0.00575   0.10   1.06
+
+Irecv                8    1  65978   0.0875   0.0063    0.005   0.19   1.91
+Irecv                8    *  65978   0.0875   0.0063    0.005   0.06   0.67
+
+Irecv               14    2  90520   0.0845  0.00781    0.005   0.32   3.47
+Irecv               14    *  90520   0.0845  0.00781    0.005   0.11   1.13
+
+Isend                5    0  70342    0.138  0.00876    0.006   0.28   3.06
+Isend                5    *  70342    0.138  0.00876    0.006   0.09   0.99
+
+Isend               10    1 110706    0.096  0.00682    0.005   0.34   3.47
+Isend               10    * 110706    0.096  0.00682    0.005   0.11   1.21
+
+Isend               15    2  61614    0.102  0.00878  0.00525   0.24   2.65
+Isend               15    *  61614    0.102  0.00878  0.00525   0.08   0.87
+
+Wait                 2    0  85472   0.0628  0.00742  0.00575   0.29   3.15
+Wait                 2    *  85472   0.0628  0.00742  0.00575   0.10   1.02
+
+Wait                 7    1  65978   0.0535  0.00588  0.00475   0.17   1.78
+Wait                 7    *  65978   0.0535  0.00588  0.00475   0.06   0.62
+
+Wait                12    2  90520    0.489  0.00734    0.005   0.30   3.26
+Wait                12    *  90520    0.489  0.00734    0.005   0.10   1.07
+
+Waitall              3    0  35171   0.0395   0.0076  0.00625   0.12   1.33
+Waitall              3    *  35171   0.0395   0.0076  0.00625   0.04   0.43
+
+Waitall              9    1  55353     43.5  0.00666    0.005   0.17   1.69
+Waitall              9    *  55353     43.5  0.00666    0.005   0.06   0.59
+
+Waitall             13    2  30807   0.0377  0.00777  0.00525   0.11   1.17
+Waitall             13    *  30807   0.0377  0.00777  0.00525   0.04   0.38
+---------------------------------------------------------------------------
+@--- Callsite Message Sent statistics (all, sent bytes) -------------------
+---------------------------------------------------------------------------
+Name              Site Rank   Count       Max      Mean       Min       Sum
+Isend                5    0   70342        32      26.3         8  1.85e+06
+Isend                5    *   70342        32      26.3         8  1.85e+06
+
+Isend               10    1  110706        32     26.94         8 2.983e+06
+Isend               10    *  110706        32     26.94         8 2.983e+06
+
+Isend               15    2   61614        32     26.15         8 1.611e+06
+Isend               15    *   61614        32     26.15         8 1.611e+06
+---------------------------------------------------------------------------
+@--- End of Report --------------------------------------------------------
+---------------------------------------------------------------------------

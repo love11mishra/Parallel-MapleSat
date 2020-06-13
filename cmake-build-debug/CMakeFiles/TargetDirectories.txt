@@ -1,0 +1,10 @@
+/home/lavleshm/MapleSat/cmake-build-debug/CMakeFiles/install.dir
+/home/lavleshm/MapleSat/cmake-build-debug/CMakeFiles/list_install_components.dir
+/home/lavleshm/MapleSat/cmake-build-debug/CMakeFiles/minisat-lib-shared.dir
+/home/lavleshm/MapleSat/cmake-build-debug/CMakeFiles/install/strip.dir
+/home/lavleshm/MapleSat/cmake-build-debug/CMakeFiles/minisat-lib-static.dir
+/home/lavleshm/MapleSat/cmake-build-debug/CMakeFiles/minisat_core.dir
+/home/lavleshm/MapleSat/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/lavleshm/MapleSat/cmake-build-debug/CMakeFiles/install/local.dir
+/home/lavleshm/MapleSat/cmake-build-debug/CMakeFiles/minisat_simp.dir
+/home/lavleshm/MapleSat/cmake-build-debug/CMakeFiles/edit_cache.dir

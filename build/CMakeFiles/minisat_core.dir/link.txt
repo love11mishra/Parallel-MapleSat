@@ -1,0 +1,1 @@
+/usr/bin/c++  -O3 -DNDEBUG   -lbfd -ldl -lm -liberty -lunwind -rdynamic CMakeFiles/minisat_core.dir/core/Main.cc.o  -o minisat_core  -L/home/lavleshm/Downloads/mpiP-3.4.1/lib -Wl,-rpath,/home/lavleshm/Downloads/mpiP-3.4.1/lib: libmaplesat.a -lmpiP -lz -lmpichcxx -lmpich 
