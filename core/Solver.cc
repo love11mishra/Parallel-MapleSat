@@ -22,7 +22,6 @@ OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWA
 #include <fstream>
 #include <mpi.h>
 #include <iostream>
-#include <iomanip>
 #include <set>
 #include "../mtl/Sort.h"
 #include "../core/Solver.h"
