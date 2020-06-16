@@ -173,6 +173,7 @@ public:
 
     int Comm_size;
     int Mpi_rank;
+    long long int iterations;
     std::string lc_file;
     std::string sc_file;
     std::string sc_string;

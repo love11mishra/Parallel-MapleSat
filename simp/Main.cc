@@ -116,7 +116,7 @@ int main(int argc, char** argv)
         MPI_Init( &argc, &argv );
         MPI_Comm_size(MPI_COMM_WORLD, &S.Comm_size);
         MPI_Comm_rank(MPI_COMM_WORLD, &S.Mpi_rank);
-        S.random_seed = S.Mpi_rank*S.random_seed + 1;
+        S.random_seed = S.Mpi_rank*S.random_seed + 273647;
 //        MPI_Pcontrol(1);
 //        MPI_Pcontrol(2);
 //        S.rnd_init_act = true;
@@ -240,15 +240,16 @@ int main(int argc, char** argv)
         }
         lbool ret = S.solveLimited(dummy);
 
-        if (S.verbosity > 0){
-            printStats(S);
-            printf("\n"); }
+//        if (S.verbosity > 0){
+//            printStats(S);
+//            printf("\n"); }
 
         //modified by @lavleshm
         printf("%s ",argv[1]);
         printStats(S); //also been modified
+        printf("[Rank]: %d [Iterations]: %lld ",S.Mpi_rank, S.iterations);
         printf(ret == l_True ? "SATISFIABLE\n" : ret == l_False ? "UNSATISFIABLE\n" : "INDETERMINATE\n");
-
+        fflush(stdin);
 //        printf("%s\n", S.sc_string.c_str());
 //        std::ofstream fh;
 //        fh.open("scUse", std::ios::app);
@@ -285,8 +286,8 @@ int main(int argc, char** argv)
 
         //---------------------------------------------------------------------------------------
 
-        MPI_Abort(MPI_COMM_WORLD, 0);
-//        MPI_Finalize();
+//        MPI_Abort(MPI_COMM_WORLD, 0);
+        MPI_Finalize();
 //        _exit(0);
 
         //---------------------------------------------------------------------------------------

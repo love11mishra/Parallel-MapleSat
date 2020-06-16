@@ -130,6 +130,7 @@ Solver::Solver() :
   , conflict_budget    (-1)
   , propagation_budget (-1)
   , asynch_interrupt   (false)
+  , iterations         (0)
 {}
 
 
@@ -785,7 +786,7 @@ lbool Solver::search(int nof_conflicts)
     starts++;
 
     for (;;){
-
+        iterations++;
         /* Here add MPI_Probe and after getting the shared_clause do:
         *
         * CRef cr = ca.alloc(shared_clause, true);
@@ -885,7 +886,8 @@ lbool Solver::search(int nof_conflicts)
 //            else{
                   CRef cr; bool ifAdded = false;
                   if(undef_count > 0) undef_count = 1;
-                  if (/*shared_clause.size() > 1 && !is_all_undef &&*/ !isSatisfied && (lbds.size()+undef_count) < 5 /* && (decisionLevel() - max_lvl) <= 2*/) {
+                  assert(shared_clause.size() > 1);
+                  if (/*shared_clause.size() > 1 && !is_all_undef && !isSatisfied &&*/ (lbds.size()+undef_count) < 5 /* && (decisionLevel() - max_lvl) <= 2*/) {
 //                      std::cout << "lz= "<<lz<<" decision level = "<<decisionLevel()<<"\n";
 //                       if(value(shared_clause[0])!= l_Undef) assert(level(var(shared_clause[0])) == decisionLevel());
                       cr = ca.alloc(shared_clause, true, 1);
